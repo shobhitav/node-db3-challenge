@@ -1,5 +1,5 @@
 const express = require('express');
-
+const db=require('../data/db-config.js');
 const Schemes = require('./scheme-model.js');
 
 const router = express.Router();
@@ -94,7 +94,6 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
-
   try {
     const deleted = await Schemes.remove(id);
 
